@@ -1,4 +1,5 @@
 ﻿using PMSOFTBookTestTask.Service.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using PMSOFTBookTestTask.Models.Response;
 using PMSOFTBookTestTask.Models.Request;
 using PMSOFTBookTestTask.Service.Dto;
@@ -30,6 +31,7 @@ namespace PMSOFTBookTestTask.Controllers
         }
 
         [HttpGet("GetListOfBooks")]
+        [Authorize(Roles = "Administrator, User")]
         public async Task<ActionResult> GetAsync()
         {
             if (!ModelState.IsValid)
@@ -52,6 +54,7 @@ namespace PMSOFTBookTestTask.Controllers
         }
 
         [HttpPut("UpdateBook")]
+        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult> UpdateAsync(BookModel model, Guid bookId)
         {
             ValidationResult validationResult = _bookModelValidator.Validate(model);
@@ -82,6 +85,7 @@ namespace PMSOFTBookTestTask.Controllers
         }
 
         [HttpPost("CreateBook")]
+        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult> CreateAsync(BookModel model)
         {
             ValidationResult validationResult = _bookModelValidator.Validate(model);
@@ -112,6 +116,7 @@ namespace PMSOFTBookTestTask.Controllers
         }
 
         [HttpDelete("DeleteBook/{bookId}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult> DeleteAsync(Guid bookId)
         {
             if (bookId.Equals(Guid.Empty) || !ModelState.IsValid)

@@ -25,6 +25,18 @@ namespace PMSOFTBookTestTask.Mapper
 
             CreateMap<AuthorEntity, AuthorDto>();
             CreateMap<AuthorDto, AuthorEntity>();
+
+
+            CreateMap<UserEntity, UserDto>();
+            CreateMap<UserDto, UserEntity>();
+
+
+            CreateMap<RoleEntity, RoleDto>();
+            CreateMap<RoleDto, RoleEntity>();
+
+
+            CreateMap<TokenDto, TokensResponse>();
+            CreateMap<TokensResponse, TokenDto>();
         }
     }
 }
