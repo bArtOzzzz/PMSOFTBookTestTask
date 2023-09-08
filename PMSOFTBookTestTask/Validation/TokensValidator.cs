@@ -1,7 +1,7 @@
 ﻿using PMSOFTBookTestTask.Models.Request;
 using FluentValidation;
 
-namespace PMSOFTBookTestTask.Controllers
+namespace PMSOFTBookTestTask.Validation
 {
     public class TokensValidator : AbstractValidator<TokensModel>
     {

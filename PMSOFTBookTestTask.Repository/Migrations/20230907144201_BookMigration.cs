@@ -103,22 +103,22 @@ namespace PMSOFTBookTestTask.Repository.Migrations
                 columns: new[] { "Id", "AuthorName" },
                 values: new object[,]
                 {
-                    { new Guid("d7ed2451-0f19-49dc-830e-fbe2d1c8bbcf"), "Ben Watson" },
-                    { new Guid("df842420-d936-4030-acfa-25761db07a02"), "Jeffrey Richter" }
+                    { new Guid("78331819-68a7-449a-a6d0-55667b880e07"), "Jeffrey Richter" },
+                    { new Guid("ab3b49b7-fdf9-4209-927d-7f8b7ee682a8"), "Ben Watson" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Genres",
                 columns: new[] { "Id", "GenreName" },
-                values: new object[] { new Guid("f93ca5c6-091e-4709-adb9-211086f8fd00"), "IT Education" });
+                values: new object[] { new Guid("0ff06213-d844-4382-abdb-5b4ec2cea35e"), "IT Education" });
 
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "Id", "Role" },
                 values: new object[,]
                 {
-                    { new Guid("585a13a7-62ff-4976-896c-5cf70dd3c6b7"), "User" },
-                    { new Guid("599fea4c-46d3-491d-a9b2-d408b017ea76"), "Administrator" }
+                    { new Guid("71163ee0-fd92-4972-b10e-1c1eba321974"), "User" },
+                    { new Guid("a46f06ed-654d-4c59-ab02-b12fc1202b9a"), "Administrator" }
                 });
 
             migrationBuilder.InsertData(
@@ -126,8 +126,8 @@ namespace PMSOFTBookTestTask.Repository.Migrations
                 columns: new[] { "Id", "AuthorId", "GenreId", "Name", "Year" },
                 values: new object[,]
                 {
-                    { new Guid("41823574-1739-4b8f-bb76-97df3d918cfa"), new Guid("d7ed2451-0f19-49dc-830e-fbe2d1c8bbcf"), new Guid("f93ca5c6-091e-4709-adb9-211086f8fd00"), "Высокопроизводительный код на платформе .NET", 2019 },
-                    { new Guid("b101d34d-6e04-4e92-9b3e-bf97e34ac9ae"), new Guid("df842420-d936-4030-acfa-25761db07a02"), new Guid("f93ca5c6-091e-4709-adb9-211086f8fd00"), "CLR via C#. Программирование на платформе Microsoft .NET Framework 4.5 на языке C#", 2002 }
+                    { new Guid("0d618ccb-17c4-4599-8df5-0ea74cac337b"), new Guid("78331819-68a7-449a-a6d0-55667b880e07"), new Guid("0ff06213-d844-4382-abdb-5b4ec2cea35e"), "CLR via C#. Программирование на платформе Microsoft .NET Framework 4.5 на языке C#", 2002 },
+                    { new Guid("a0a2902d-dc5d-491e-8ce3-8c1b67713fb7"), new Guid("ab3b49b7-fdf9-4209-927d-7f8b7ee682a8"), new Guid("0ff06213-d844-4382-abdb-5b4ec2cea35e"), "Высокопроизводительный код на платформе .NET", 2019 }
                 });
 
             migrationBuilder.InsertData(
@@ -135,8 +135,8 @@ namespace PMSOFTBookTestTask.Repository.Migrations
                 columns: new[] { "Id", "Email", "Password", "RefreshToken", "RoleId", "Username" },
                 values: new object[,]
                 {
-                    { new Guid("33bdcabc-3f00-4aa7-ae3b-d274eee520ef"), "admin@gmail.com", "$2a$11$2LjY4Q1k.dXMNY0pui8u4.tGVGpVAkSpnIhpWeJO.smZGIOPIlN2i", null, new Guid("599fea4c-46d3-491d-a9b2-d408b017ea76"), "Administrator" },
-                    { new Guid("e983f9ea-ea3f-45ca-840e-86725e6d6963"), "user@gmail.com", "$2a$11$gWkXbP6mBx5.taFglFQfke2vpZKB43Q5vh.aiRWXJQoLWZ0a5bNuO", null, new Guid("585a13a7-62ff-4976-896c-5cf70dd3c6b7"), "User" }
+                    { new Guid("d114b954-c91c-4004-b29f-69d6576be258"), "admin@gmail.com", "$2a$11$QTM4Qpxk0RP/LBD0KrS/xektf15VgRQbYOxQ80vjiASJONm63MKPS", null, new Guid("a46f06ed-654d-4c59-ab02-b12fc1202b9a"), "Administrator" },
+                    { new Guid("f67b0ba2-783a-4ac5-a1d4-0692d7be3fbd"), "user@gmail.com", "$2a$11$TGnodoBwhmzJH5nY3EYDL.BQi9E1rqBMrAIqBKlbVjihLYtKDl8Wu", null, new Guid("71163ee0-fd92-4972-b10e-1c1eba321974"), "User" }
                 });
 
             migrationBuilder.CreateIndex(

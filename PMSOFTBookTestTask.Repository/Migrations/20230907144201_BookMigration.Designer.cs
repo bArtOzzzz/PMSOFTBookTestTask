@@ -12,7 +12,7 @@ using PMSOFTBookTestTask.Repository.Context;
 namespace PMSOFTBookTestTask.Repository.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230905131033_BookMigration")]
+    [Migration("20230907144201_BookMigration")]
     partial class BookMigration
     {
         /// <inheritdoc />
@@ -41,12 +41,12 @@ namespace PMSOFTBookTestTask.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d7ed2451-0f19-49dc-830e-fbe2d1c8bbcf"),
+                            Id = new Guid("ab3b49b7-fdf9-4209-927d-7f8b7ee682a8"),
                             AuthorName = "Ben Watson"
                         },
                         new
                         {
-                            Id = new Guid("df842420-d936-4030-acfa-25761db07a02"),
+                            Id = new Guid("78331819-68a7-449a-a6d0-55667b880e07"),
                             AuthorName = "Jeffrey Richter"
                         });
                 });
@@ -80,17 +80,17 @@ namespace PMSOFTBookTestTask.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("41823574-1739-4b8f-bb76-97df3d918cfa"),
-                            AuthorId = new Guid("d7ed2451-0f19-49dc-830e-fbe2d1c8bbcf"),
-                            GenreId = new Guid("f93ca5c6-091e-4709-adb9-211086f8fd00"),
+                            Id = new Guid("a0a2902d-dc5d-491e-8ce3-8c1b67713fb7"),
+                            AuthorId = new Guid("ab3b49b7-fdf9-4209-927d-7f8b7ee682a8"),
+                            GenreId = new Guid("0ff06213-d844-4382-abdb-5b4ec2cea35e"),
                             Name = "Высокопроизводительный код на платформе .NET",
                             Year = 2019
                         },
                         new
                         {
-                            Id = new Guid("b101d34d-6e04-4e92-9b3e-bf97e34ac9ae"),
-                            AuthorId = new Guid("df842420-d936-4030-acfa-25761db07a02"),
-                            GenreId = new Guid("f93ca5c6-091e-4709-adb9-211086f8fd00"),
+                            Id = new Guid("0d618ccb-17c4-4599-8df5-0ea74cac337b"),
+                            AuthorId = new Guid("78331819-68a7-449a-a6d0-55667b880e07"),
+                            GenreId = new Guid("0ff06213-d844-4382-abdb-5b4ec2cea35e"),
                             Name = "CLR via C#. Программирование на платформе Microsoft .NET Framework 4.5 на языке C#",
                             Year = 2002
                         });
@@ -112,7 +112,7 @@ namespace PMSOFTBookTestTask.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f93ca5c6-091e-4709-adb9-211086f8fd00"),
+                            Id = new Guid("0ff06213-d844-4382-abdb-5b4ec2cea35e"),
                             GenreName = "IT Education"
                         });
                 });
@@ -133,12 +133,12 @@ namespace PMSOFTBookTestTask.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("599fea4c-46d3-491d-a9b2-d408b017ea76"),
+                            Id = new Guid("a46f06ed-654d-4c59-ab02-b12fc1202b9a"),
                             Role = "Administrator"
                         },
                         new
                         {
-                            Id = new Guid("585a13a7-62ff-4976-896c-5cf70dd3c6b7"),
+                            Id = new Guid("71163ee0-fd92-4972-b10e-1c1eba321974"),
                             Role = "User"
                         });
                 });
@@ -173,18 +173,18 @@ namespace PMSOFTBookTestTask.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("33bdcabc-3f00-4aa7-ae3b-d274eee520ef"),
+                            Id = new Guid("d114b954-c91c-4004-b29f-69d6576be258"),
                             Email = "admin@gmail.com",
-                            Password = "$2a$11$2LjY4Q1k.dXMNY0pui8u4.tGVGpVAkSpnIhpWeJO.smZGIOPIlN2i",
-                            RoleId = new Guid("599fea4c-46d3-491d-a9b2-d408b017ea76"),
+                            Password = "$2a$11$QTM4Qpxk0RP/LBD0KrS/xektf15VgRQbYOxQ80vjiASJONm63MKPS",
+                            RoleId = new Guid("a46f06ed-654d-4c59-ab02-b12fc1202b9a"),
                             Username = "Administrator"
                         },
                         new
                         {
-                            Id = new Guid("e983f9ea-ea3f-45ca-840e-86725e6d6963"),
+                            Id = new Guid("f67b0ba2-783a-4ac5-a1d4-0692d7be3fbd"),
                             Email = "user@gmail.com",
-                            Password = "$2a$11$gWkXbP6mBx5.taFglFQfke2vpZKB43Q5vh.aiRWXJQoLWZ0a5bNuO",
-                            RoleId = new Guid("585a13a7-62ff-4976-896c-5cf70dd3c6b7"),
+                            Password = "$2a$11$TGnodoBwhmzJH5nY3EYDL.BQi9E1rqBMrAIqBKlbVjihLYtKDl8Wu",
+                            RoleId = new Guid("71163ee0-fd92-4972-b10e-1c1eba321974"),
                             Username = "User"
                         });
                 });

@@ -33,7 +33,7 @@ namespace PMSOFTBookTestTask.Controllers
             _tokensValidator = tokensValidator;
         }
 
-        [HttpGet("GetRefreshTokenByUser")]
+        [HttpGet("GetRefreshTokenByUser/{userId}")]
         [AllowAnonymous]
         public async Task<ActionResult> GetRefreshTokenByUserAsync(Guid userId)
         {

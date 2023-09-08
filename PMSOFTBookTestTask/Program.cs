@@ -1,22 +1,21 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using PMSOFTBookTestTask.Repository.Abstract;
 using PMSOFTBookTestTask.Repository.Context;
 using PMSOFTBookTestTask.Service.Abstract;
 using PMSOFTBookTestTask.Models.Request;
 using System.Text.Json.Serialization;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using PMSOFTBookTestTask.Repository;
 using PMSOFTBookTestTask.Validation;
 using FluentValidation.AspNetCore;
 using PMSOFTBookTestTask.Service;
 using PMSOFTBookTestTask.Mapper;
+using System.Security.Claims;
 using FluentValidation;
+using System.Text;
 using Serilog;
 using Microsoft.OpenApi.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
-using System.Text;
-using PMSOFTBookTestTask.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +26,10 @@ builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IGenreRepository, GenreRepository>();
+builder.Services.AddScoped<IGenreService, GenreService>();
+builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
+builder.Services.AddScoped<IAuthorService, AuthorService>();
 
 builder.Services.AddScoped<IValidator<BookModel>, BookValidator>();
 builder.Services.AddScoped<IValidator<LoginModel>, LoginValidator>();
@@ -38,6 +41,8 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 });
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -121,7 +126,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigins", config =>
     {
         config.SetIsOriginAllowedToAllowWildcardSubdomains()
-        .WithOrigins("http://localhost:4200")
+        .WithOrigins("http://localhost:3000", 
+                     "http://localhost:3001")
         .AllowAnyHeader()
         .AllowAnyMethod()
         .AllowCredentials()

@@ -31,7 +31,7 @@ namespace PMSOFTBookTestTask.Controllers
         }
 
         [HttpGet("GetListOfBooks")]
-        [Authorize(Roles = "Administrator, User")]
+        [AllowAnonymous]
         public async Task<ActionResult> GetAsync()
         {
             if (!ModelState.IsValid)
@@ -53,7 +53,7 @@ namespace PMSOFTBookTestTask.Controllers
             return Ok(booksMap);
         }
 
-        [HttpPut("UpdateBook")]
+        [HttpPut("UpdateBook/{bookId}")]
         [Authorize(Roles = "Administrator")]
         public async Task<ActionResult> UpdateAsync(BookModel model, Guid bookId)
         {
