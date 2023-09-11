@@ -24,7 +24,7 @@ namespace PMSOFTBookTestTask.Controllers
         }
 
         [HttpGet("GetListOfAuthors")]
-        [Authorize(Roles = "Administrator, User")]
+        [AllowAnonymous]
         public async Task<ActionResult> GetAsync()
         {
             if (!ModelState.IsValid)
